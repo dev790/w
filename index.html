@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+   <head>
+      <meta charset="utf-8">
+      <title>Login and Sign Up</title>
+      <link rel="stylesheet" href="style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+   </head>
+   <body>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAIsrSuITD_BkkSrSQr5ALP7FBE3-2PbFk",
+    authDomain: "investments-e323a.firebaseapp.com",
+    databaseURL: "https://investments-e323a-default-rtdb.firebaseio.com",
+    projectId: "investments-e323a",
+    storageBucket: "investments-e323a.appspot.com",
+    messagingSenderId: "1072164873070",
+    appId: "1:1072164873070:web:57e2f18a219c80fff4577f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+        <div class="col-md-6 d-none d-sm-none d-md-block">
+          <img src="t.png" alt="tours pics" class="devn">
+        </div>
+        <div class="home_content">
+    <div class="text">Karna</div>
+  </div>
+   <div class="logo_content">
+      <div class="logo">
+        <div class="logo_name"></div>
+      </div>
+      </div>
+      <div class="aent">
+    <img src=""></img>
+  </div>
+      <i class='bx bx-menu' id="btn" ></i>
+    </div>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title login">
+               Login 
+            </div>
+            <div class="title signup">
+               Sign Up 
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls">
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Login</label>
+               <label for="signup" class="slide signup">Sign Up</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="home.html" class="login">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required pattern="[^ @]*@[^ @]*">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required minlength="6">
+                  </div>
+                  
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Login">
+                  </div>
+                  <div class="signup-link">
+                     Not a member? <a href="">Sign Up now</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="text" placeholder="Email Address" required pattern="[^ @]*@[^ @]*">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Password" required id="txtPassword" required minlength="6">
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password" id="txtConfirmPassword" required  required minlength="6">
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" id="btnSubmit" value="Signup" onclick="return Validate()">
+                     
+                  </div>
+                  
+               </form>
+            </div>
+         </div>
+      </div>
+      <script>
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+      <script src="password.js"></script>
+   </body>
+</html>
